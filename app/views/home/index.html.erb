@@ -1,0 +1,38 @@
+<!--<h1>로또로 부자가 되보자!</h1>-->
+<!--<img src ="http://www.nlotto.co.kr/img/index/main_ball_<#%= @lotto.at(0) %>.gif">-->
+<!--<img src ="http://www.nlotto.co.kr/img/index/main_ball_<#%= @lotto.at(1) %>.gif">-->
+<!--<img src ="http://www.nlotto.co.kr/img/index/main_ball_<#%= @lotto.at(2) %>.gif">-->
+<!--<img src ="http://www.nlotto.co.kr/img/index/main_ball_<#%= @lotto.at(3) %>.gif">-->
+<!--<img src ="http://www.nlotto.co.kr/img/index/main_ball_<#%= @lotto.at(4) %>.gif">-->
+<!--<img src ="http://www.nlotto.co.kr/img/index/main_ball_<#%= @lotto.at(5) %>.gif">-->
+<div class="container" style="margin-top:50px;">
+    <h1>내가 뽑은 번호는 ...</h1>
+    <% (0..@lotto.length).each do |l| %>
+        <!--<img src ="https://www.dhlottery.co.kr/img/index/main_ball_<#%= @lotto.at(l) %>.gif">-->
+        <%= @lotto.at(l) %>
+    <% end %>
+    <br>
+    <h1>이번주 당첨번호는...</h1>
+    <% (0..@drw_numbers.length).each do |d| %>
+        <!--<img src ="https://www.dhlottery.co.kr/img/index/main_ball_<#%= @drw_numbers.at(d) %>.gif">-->
+        <%= @drw_numbers.at(d) %>
+    <% end %>
+    <hr />
+    <h1>결과는 ... <%= @result%> 입니다.</h1>
+    <% (0..@match_count).each do |m| %>
+        <!--<img src ="https://www.dhlottery.co.kr/img/index/main_ball_<#%= @match_number.at(m) %>.gif">-->
+        <%= @match_number.at(m) %>
+    <% end %>
+    <br>
+    <button type="button" class="btn btn-dark" id="btn">새로고침</button>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $('#btn').click(function() {
+            location.reload();
+        });
+});       
+</script>
+ 
